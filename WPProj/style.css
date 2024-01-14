@@ -1,0 +1,38 @@
+*{
+    margin:5px;
+}
+body{
+    background-color: lightblue;
+}
+h2{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.boxform{
+    margin-left: 35%;
+    margin-right: 35%;
+    padding-top: 10px;
+    padding-left: 10px;
+    border: black ;
+    border-radius: 1em;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 5px 5px lightslategray;
+}
+.boxform p{
+    font-family: 'Courier New', Courier, monospace;
+}
+.boxform input{
+    border:black 0.01px solid;
+    border-radius: 0.5em;
+}
+.btn{
+    padding-top: 10px;
+}
+.btn button{
+    padding: 6px;
+    border:none;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 2px 2px lightslategray;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+}

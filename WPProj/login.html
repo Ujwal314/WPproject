@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2>The Brand</h2>
+        <div class="boxform">
+            <form onsubmit="return val()" action="http://localhost/WPProj/log.php" method="post">
+                <div>
+                    <label>Username:</label><br><input type="text" name="usrnm" id="usrnm">
+                </div>
+                <div>
+                    <label>Password:</label><br><input type="password" name="pwd" id="pwd">
+                </div>
+                <div class="btn">
+                    <button  type="submit">Login</button>
+                </div>
+                <div>
+                    <p style="font-family: 'Courier New', Courier, monospace;">Dont have an Account?<a href="register.html">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script>
+        function val(){
+            var usrnm=document.getElementById('usrnm');
+            var pwd=document.getElementById('pwd');
+            if(usrnm.value==""){
+                alert("Enter Username");
+                usrnm.focus();
+                return false;
+            }if(pwd.value==""){
+                alert("Enter Password");
+                pwd.focus();
+                return false;
+            }
+        }
+    </script>
+</html>
