@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fku</title>
+    </head>
+    <body>
+        <form style="border: 1px solid;" onsubmit="return val()" action="http:localhost/WPProj/hell.php" method="post">
+   
+                <label>Name</label><input type="text" id="name" name="name">
+ 
+                <label>Gender</label>
+                <input type="radio" id="male" name="gender">male 
+                <input type="radio" id="female" name="gender">female
+
+                <label>Branch</label>
+                <select id="branch" name="branch">
+                    <option value="0">--select--</option>
+                    <option value="1">ise</option>
+                    <option value="2">cse</option>
+                    <option value="3">eee</option>
+                </select>
+
+
+                <button type="submit">Submit</button>
+        </form>
+    </body>
+    <script>
+        function val(){
+            var name=document.getElementById("name");
+            if(name.value==""){
+                alert("enter name");
+                return false;
+            }
+            if((!document.getElementById("male").checked) && (!document.getElementById("female").checked)){
+                alert("enter gender");
+                return false;
+            }
+
+            if(document.getElementById("branch").value=='0'){
+                alert("enter branch ");
+                return false;  
+            }
+
+        }
+    </script>
+</html>

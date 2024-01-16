@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>HI</title>
+    </head>
+    <body>
+        <form enctype="multipart/form-data" action="http://localhost/WPProj/mu/s2.php" method="post" onsubmit="return val()">
+            <div>
+                <label>CV</label><input type="file" name="upload" id="upload">
+            </div>
+            <div>
+                <button type="submit">Upload</button>
+            </div>
+        </form>
+    </body>
+    <script>
+        function val(){
+            if(document.getElementById('upload').files.length==0){
+                alert('file is not chosen');
+                return false;
+            }
+        }
+    </script>
+</html>
