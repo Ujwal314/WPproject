@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feedback</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            h3{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="blurback">
+            <h2>Restaurant Name</h2>
+            <div class="boxform">
+                <form onsubmit="return val()" action="home.html">
+                    <h3>How satisfied are you <br> with our services?</h3>
+                    <div class="rating">
+                        <div class="column">
+                            <p id="r1" class="column-item">&#128546</p>
+                            <h3>Unhappy</h3>
+                        </div>
+                        <div class="column">
+                            <p id="r2" class="column-item">&#128522</p>
+                            <h3>Happy</h3>
+                        </div>
+                        <div class="column">
+                            <p id="r3" class="column-item">&#128513</p>
+                            <h3>Satisfied</h3>
+                        </div>
+                    </div>
+                    <div style="clear: both;">
+                        <label>Message:[optional]</label><br><input id="msg" type="text">
+                    </div>
+                    <div class="btn">
+                        <button id="btn" type="submit">Send Review</button>
+                        <a href="home.html"><button type="button">Go Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        var r1=document.getElementById('r1');
+        var r2=document.getElementById('r2');
+        var r3=document.getElementById('r3');
+        var msg=document.getElementById('msg');
+        var answer="";
+        r1.addEventListener("click",function(){
+            answer="unhappy";
+            r1.classList.add("bord");
+            r2.classList.remove("bord");
+            r3.classList.remove("bord");
+        });
+        r2.addEventListener("click",function(){
+            answer="happy";
+            r2.classList.add("bord");
+            r1.classList.remove("bord");
+            r3.classList.remove("bord");
+        });
+        r3.addEventListener("click",function(){
+            answer="satisfied";
+            r3.classList.add("bord");
+            r1.classList.remove("bord");
+            r2.classList.remove("bord");
+        });
+        function val(){
+            if(answer==""){
+                alert('Please choose one!');
+                return false;
+            }else if(answer=="unhappy"){
+                if(msg.value==""){
+                    alert("We're Sorry for your unpleasant experience.Would you care to express what was the Problem?");
+                    msg.focus();
+                    return false;
+                }else{
+                    alert("We're Sorry for your unpleasant experience.");
+                }
+            }else if(answer=="happy"){
+                alert("We're Glad we could serve you well!!");
+            }else{
+                alert('Thank you For the Feedback!!');
+            }
+        }
+    </script>
+</html>

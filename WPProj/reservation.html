@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Reservations</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="blurback">
+            <h2>Restaurant Name</h2>
+            <div class="boxform">
+                <form onsubmit="return val()" action="home.html">
+                    <div>
+                        <label>Date Of Reservation:</label><br><input type="date" id="date">
+                    </div>
+                    <div>
+                        <label>At What Time:</label><br><input type="time" id="time">
+                    </div>
+                    <div>
+                        <label>Seats Needed:</label><br><input type="number" id="seats">
+                    </div>
+                    <div>
+                        <label>Family Section?</label><input type="checkbox" id="fam">
+                    </div>
+                    <div>
+                        <label>Any Special Occasion?[Optional]:</label><br><input type="text" id="occ">
+                    </div>
+                    <div class="btn">
+                        <button  type="submit">Reserve</button>
+                        <a href="home.html"><button type="button">Go Back</button></a>
+                    </div>
+                    <div>
+                        <p style="font-family: 'Courier New', Courier, monospace;">Like our Food?<a href="feedback.html">Rate US</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        function val(){
+            var date=document.getElementById('date');
+            var time=document.getElementById('time');
+            var seats=document.getElementById('seats');
+            if(date.value==""){
+                alert("Enter Date");
+                date.focus();
+                return false;
+            }if(time.value==""){
+                alert("Enter Time");
+                time.focus();
+                return false;
+            }if(seats.value==""){
+                alert("Enter Seats");
+                seats.focus();
+                return false;
+            }
+            alert("Yay!!Your Seats are Reserved");
+        }
+    </script>
+</html>
