@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reservations</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            @font-face {
+                font-family: Font3;
+                src: url(Sinthike.otf);
+            }
+            @font-face {
+                font-family: Font4;
+                src: url(Salsa-Regular.ttf);
+              }
+              body{
+                overflow-y:scroll ;
+              }
+            .wrap{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .navbar{
+                background-color: transparent;
+              }
+              .text{
+                color: whitesmoke;
+                font-size: 70px;
+              }
+            #h{
+              top:220px;
+              position: relative;
+            }
+            .t{
+              color: darkgray;
+            }
+            .navbar :hover{
+              color: white;
+          }
+          .navbar-toggler-icon{
+              color: white;
+          }
+          .dropdown-menu{
+              background-color: transparent;
+          }
+          .dropdown-menu :hover{
+              background-color: transparent;
+          }
+          .nav-link{
+            position: relative;
+          }
+          .nav-link::after{
+            content: '';
+            opacity: 0;
+            transition: all 0.3s;
+            height: 2px;
+            width: 100%;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+          .nav-link:hover::after{
+            opacity: 1;
+          }
+          #act{
+            color: #fff;
+          }
+          .log{
+            margin-top: 5px;
+            width: 600px;
+            height: 520px;
+            background: transparent;
+            border: 0.01px solid black;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+            color: whitesmoke;
+            font-family: Font4;
+            border-radius: 10px;
+            transition: 1s;
+            padding-top:20px;
+            padding-left: 40px;
+        }
+        #head{
+            margin-top: 1%;
+            margin-bottom: 4%;
+            font-family: Font3;
+            font-weight: 600px;
+            font-size: 50px;
+            position: relative;
+            color: whitesmoke;
+        }
+        .log:hover{
+            border: none;
+            box-shadow: 0 0 10px rgba(255,255,255,1);
+            opacity: 1.5;
+        }
+        .log a{
+            text-decoration: none;
+        }
+        .log input{
+            width: 500px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 5px;
+            position: relative;
+            background: transparent;
+            border-radius: 10px;
+            transition: 400ms;
+            border-color: none;
+            opacity: 1;
+            color: whitesmoke;
+        }
+        .log input:hover{
+            border-color: white;
+            opacity: 1.5;
+        }
+        .log button{
+            margin-top: 20px;
+            margin: 20;
+            width:320px
+        }
+        #ai{
+            color: whitesmoke;
+            text-decoration: underline;
+            font-weight: 600;
+            letter-spacing: 1;
+        }
+        .in{
+            margin-bottom: 15px;
+        }
+        .in label{
+            margin-bottom: 5px;
+        }
+        #chkb{
+            width: 15px;
+            height: 15px;
+        }
+        .bon{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        </style>
+    </head>
+    <body>
+        <nav class=" navbar navbar-expand-lg">
+            <div class=" container-fluid">
+              <a class="navbar-brand t" href="home.html">Restoran</a>
+              <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item ">
+                    <a class="t nav-link" aria-current="page" href="menu.html">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link t" href="gallery.html">Gallery</a>
+                  </li>
+                  <li class="nav-item dropdown t">
+                    <a id="act" class="nav-link dropdown-toggle t" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a id="act" class="dropdown-item" href="reservation.html">Reservations</a></li>
+                        <li><a class="dropdown-item" href="events.html">Events</a></li>
+                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                        <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+                      </ul>
+                  </li>
+                </ul>
+                <!--
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+              </div>
+            </div>
+          </nav>
+        <div class="wrap">
+            <h2 id="head">RESERVATION</h2>
+            <div class="log">
+                <form onsubmit="return val()" action="home.html">
+                    <div class="in">
+                        <label>Date Of Reservation:</label><br><input type="date" id="date">
+                    </div>
+                    <div class="in">
+                        <label>At What Time:</label><br><input type="time" id="time">
+                    </div>
+                    <div class="in">
+                        <label>Seats Needed:</label><br><input type="number" id="seats">
+                    </div>
+                    <div class="in">
+                        <label>Family Section?</label><input type="checkbox" id="chkb" id="fam">
+                    </div>
+                    <div class="in">
+                        <label>Any Special Occasion?[Optional]:</label><br><input type="text" id="occ">
+                    </div>
+                    <div class="bon">
+                        <button  type="submit" class="btn btn-outline-light">Reserve</button>
+                    </div>
+                    <div>
+                        <p style="font-family: Font4">Like our Food?<a id="ai" href="feedback.html">Rate US</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    <script>
+        function val(){
+            var date=document.getElementById('date');
+            var time=document.getElementById('time');
+            var seats=document.getElementById('seats');
+            if(date.value==""){
+                alert("Enter Date");
+                date.focus();
+                return false;
+            }if(time.value==""){
+                alert("Enter Time");
+                time.focus();
+                return false;
+            }if(seats.value==""){
+                alert("Enter Seats");
+                seats.focus();
+                return false;
+            }
+            alert("Yay!!Your Seats are Reserved");
+        }
+    </script>
+</html>

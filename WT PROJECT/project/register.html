@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/ac275add4a.js" crossorigin="anonymous"></script>
+        <style>
+            @font-face {
+                font-family: Font3;
+                src: url(Sinthike.otf);
+            }
+            @font-face {
+                font-family: Font4;
+                src: url(Salsa-Regular.ttf);
+              }
+            #head{
+                margin-top: 5%;
+                margin-bottom: 30px;
+                font-family: Font3;
+                font-weight: 600px;
+                font-size: 50px;
+                position: relative;
+                color: whitesmoke;
+            }
+            .log{
+                margin-top: 60px;
+                width: 400px;
+                height: 480px;
+                background: transparent;
+                border: 0.01px solid black;
+                backdrop-filter: blur(20px);
+                box-shadow: 0 0 10px rgba(0,0,0,.2);
+                position: absolute;
+                color: whitesmoke;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-family: Font4;
+                border-radius: 10px;
+                transition: 1s;
+            }
+            .log:hover{
+                border: none;
+                box-shadow: 0 0 10px rgba(255,255,255,1);
+                opacity: 1.5;
+            }
+            .log a{
+                text-decoration: none;
+            }
+            .reg{
+                font-size: 40px;
+                padding-bottom: 10px;
+                text-align: center;
+            }
+            .log input{
+                width: 350px;
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 5px;
+                position: relative;
+                background: transparent;
+                border-radius: 10px;
+                transition: 400ms;
+                border-color: none;
+                opacity: 1;
+                color: whitesmoke;
+            }
+            .input-box .i1{
+                position: absolute;
+                right: 25px;
+                top: 36.5%;
+                transform: translateY(-50%);
+                font-size: 20px;
+            }
+            .input-box .i2{
+                position: absolute;
+                right: 25px;
+                top: 59%;
+                transform: translateY(-50%);
+                font-size: 20px;
+            }
+            .log input:hover{
+                border-color: white;
+                opacity: 1.5;
+            }
+            .log button{
+                margin-top: 20px;
+                margin: 20px;
+                width:320px
+            }
+            #ai{
+                color: whitesmoke;
+                text-decoration: underline;
+                font-weight: 600;
+                letter-spacing: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <h2 id="head">RESTORAN</h2>
+            <div class="log">
+                <div class="reg">
+                    <label>Register</label>
+                </div>
+                <form id="fi" onsubmit="return val()" action="http://localhost/WPProj/reg.php" method="post">
+                    <div >
+                        <label>Username</label><br><input type="text" name="usrnm" id="usrnm" placeholder="enter username">
+                    </div>
+                    <div>
+                        <label>Password:</label><br><input type="password" name="pwd" id="pwd" placeholder="enter password">
+                    </div>
+                    <div>
+                        <label>Re-enter Password:</label><br><input type="password" name="pwd1" id="pwd1" placeholder="re-enter password">
+                    </div>
+                    <div class="b0tn">
+                        <button type="submit" class="btn btn-outline-light">Register</button>
+                    </div>
+                    <div>
+                        <p style="font-family: Font4">Have an Account?<a id="ai" href="login.html">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    <script>
+        function val(){
+            var usrnm=document.getElementById('usrnm');
+            var pwd=document.getElementById('pwd');
+            var pwd1=document.getElementById('pwd1');
+            if(usrnm.value==""){
+                alert("Enter Username");
+                usrnm.focus();
+                return false;
+            }if(pwd.value==""){
+                alert("Enter Password");
+                pwd.focus();
+                return false;
+            }if(pwd1.value==""){
+                alert("Re-Enter Password");
+                pwd1.focus();
+                return false;
+            }if(pwd.value!=pwd1.value){
+                alert("Password dont match");
+                pwd1.focus();
+                return false;
+            }
+        }
+        function send(){
+            var form=document.getElementById('fi');
+            var data=new FormData(form);
+            fetch("reg.php",{method:"post",body:data})
+            .then(res=>res.text())
+            .then(txt=>alert(txt))
+            .catch(err=>console.error(err))
+            .finally(()=>console.log("FINALLY"));
+        }
+    </script>
+</html>

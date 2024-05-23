@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Events</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/ac275add4a.js" crossorigin="anonymous"></script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            @font-face {
+                font-family: Font3;
+                src: url(Sinthike.otf);
+            }
+            @font-face {
+                font-family: Font4;
+                src: url(Salsa-Regular.ttf);
+              }
+              body{
+                overflow-y:scroll ;
+              }
+            .wrap{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .navbar{
+                background-color: transparent;
+              }
+              .text{
+                color: whitesmoke;
+                font-size: 70px;
+              }
+            #h{
+              top:220px;
+              position: relative;
+            }
+            .t{
+              color: darkgray;
+            }
+            .navbar :hover{
+              color: white;
+          }
+          .navbar-toggler-icon{
+              color: white;
+          }
+          .dropdown-menu{
+              background-color: transparent;
+          }
+          .dropdown-menu :hover{
+              background-color: transparent;
+          }
+          .nav-link{
+            position: relative;
+          }
+          .nav-link::after{
+            content: '';
+            opacity: 0;
+            transition: all 0.3s;
+            height: 2px;
+            width: 100%;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+          .nav-link:hover::after{
+            opacity: 1;
+          }
+          #act{
+            color: #fff;
+          }
+          .log{
+            margin-top: 5px;
+            width: 600px;
+            height: 540px;
+            background: transparent;
+            border: 0.01px solid black;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+            color: whitesmoke;
+            font-family: Font4;
+            border-radius: 10px;
+            transition: 1s;
+            padding-top:20px;
+            padding-left: 40px;
+        }
+        #head{
+            margin-top: 1%;
+            margin-bottom: 4%;
+            font-family: Font3;
+            font-weight: 600px;
+            font-size: 50px;
+            position: relative;
+            color: whitesmoke;
+        }
+        .log:hover{
+            border: none;
+            box-shadow: 0 0 10px rgba(255,255,255,1);
+            opacity: 1.5;
+        }
+        .log a{
+            text-decoration: none;
+        }
+        .log input{
+            width: 500px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 5px;
+            position: relative;
+            background: transparent;
+            border-radius: 10px;
+            transition: 400ms;
+            border-color: none;
+            opacity: 1;
+            color: whitesmoke;
+        }
+        .log input:hover{
+            border-color: white;
+            opacity: 1.5;
+        }
+        .log button{
+            margin-top: 20px;
+            margin: 20;
+            width:320px
+        }
+        #ai{
+            color: whitesmoke;
+            text-decoration: underline;
+            font-weight: 600;
+            letter-spacing: 1;
+        }
+        .in{
+            margin-bottom: 15px;
+        }
+        .in label{
+            margin-bottom: 5px;
+        }
+        #chkb{
+            width: 15px;
+            height: 15px;
+        }
+        .bon{
+            margin-top: 50px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .rad #vg{
+            top: 68%;
+            right: 45%;
+            position: absolute;
+        }
+        .rad .v{
+            top:67%;
+            right: 82%;
+            position: absolute;
+        }
+        .rad #nvg{
+            top: 73%;
+            right: 45%;
+            position: absolute;
+        }
+        .rad .nv{
+            top:72%;
+            right: 76%;
+            position: absolute;
+        }
+        </style>
+    </head>
+    <body>
+        <nav class=" navbar navbar-expand-lg">
+            <div class=" container-fluid">
+              <a class="navbar-brand t" href="home.html">Restoran</a>
+              <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item ">
+                    <a class="t nav-link" aria-current="page" href="menu.html">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link t" href="gallery.html">Gallery</a>
+                  </li>
+                  <li class="nav-item dropdown t">
+                    <a id="act" class="nav-link dropdown-toggle t" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="reservation.html">Reservations</a></li>
+                        <li><a  id="act" class="dropdown-item" href="events.html">Events</a></li>
+                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                        <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+                      </ul>
+                  </li>
+                </ul>
+                <!--
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+              </div>
+            </div>
+          </nav>
+        <div class="wrap">
+            <h2 id="head">EVENTS</h2>
+            <div class="log">
+                <form onsubmit="return val()" action="home.html">
+                    <div class="in">
+                        <label>What is the Event:</label><br><input type="text" id="type">
+                    </div>
+                    <div class="in">
+                        <label>On Which Day:</label><br><input type="date" id="date">
+                    </div>
+                    <div class="in">
+                        <label>Approx Head Count:</label><br><input type="number" id="seats">
+                    </div>
+                    <div class="in">
+                        <label>Type Of Food:</label><br>
+                        <select id="food">
+                            <option value=0>--Select--</option>
+                            <option value=1>Continental</option>
+                            <option value=2>North Indian</option>
+                            <option value=3>FastFood</option>
+                            <option value=4>South Indian</option>
+                        </select>
+                    </div>
+                    <div class="rad">
+                        <label>Veg or Non-Veg:</label>
+                        <input type="radio" id="vg" name="vgnvg"><label class="v">Veg</label>
+                        <input type="radio" id="nvg" name="vgnvg"><label class="nv">Non-Veg</label>
+                    </div>
+                    <div class="bon">
+                        <button  type="submit" class="btn btn-outline-light">Book</button>
+                    </div>
+                    <div>
+                        <p style="font-family: Font4">Like our Food?<a id="ai" href="feedback.html">Rate US</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    <script>
+        function val(){
+            var type=document.getElementById('type');
+            var date=document.getElementById('date');
+            var seats=document.getElementById('seats');
+            var food=document.getElementById('food');
+            if(type.value==""){
+                alert("What is the Event");
+                type.focus();
+                return false;
+            }if(date.value==""){
+                alert("Enter Date");
+                date.focus();
+                return false;
+            }if(seats.value==""){
+                alert("Enter Head Count");
+                seats.focus();
+                return false;
+            }if(food.value==0){
+                alert("Enter Food Type");
+                food.focus();
+                return false;
+            }if((!document.getElementById('veg').checked) && (!document.getElementById('nvg').checked)){
+                alert("Enter Veg or Non Veg");
+                return false;
+            }
+            alert("Booking in Progress...We'll Get Back to you.");
+        }
+    </script>
+</html>
